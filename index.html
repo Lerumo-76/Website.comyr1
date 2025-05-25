@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusCart - Student Electronics Deals</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <!--Font Awesome CND for icons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+<header>
+  <h1>CampusCart</h1>
+  <nav class="side-nav">
+    <a class="active" href="index.html">
+      <i class="fas fa-home"></i>
+      <span class="nav-label">Home</span>
+    </a>
+    <a href="shop.html">
+      <i class="fas fa-store"></i>
+      <span class="nav-label">Shop</span>
+    </a>
+    <a href="deals.html">
+      <i class="fas fa-tag"></i>
+      <span class="nav-label">Deals</span></a>
+    <a href="about.html">
+      <i class="fas fa-user"></i>
+      <span class="nav-label">About Us</span>
+    </a>
+    <a href="contact.html">
+      <i class="fas fa-envelope"></i>
+      <span class="nav-label">Contact</span>
+    </a>
+  </nav>
+</header>
+<section class="hero">
+  <h2>Welcome Students! Get the Best Deals on Laptops, Phones & More</h2>
+  <p>Exclusive discounts just for you.</p>
+  <a href="shop.html" class="btn">Shop Now</a>
+</section>
+<section>
+  <h2 style="text-align:center;">Featured Products</h2>
+  <div class="products">
+    <div class="product-card">
+      <img src="images/1.webp" alt="1" />
+      <h3>Lenovo IdeaPad Slim 3X - 2025</h3>
+      <p>Lenovo IdeaPad Slim 3X - 2025 - Everyday AI Laptop - Copilot+ PC - 15.3" WUXGA Display - 16 GB Memory - 512 GB Storage - Qualcomm® Snapdragon® X - Luna Grey</p>
+      <p><strong>P7899</strong> <span style="color:green;">Student Discount Available</span></p>
+      <a href="deals.html?product-1" class="btn">View Details</a>
+    </div>
+    <div class="product-card">
+      <img src="images/6.jpg" alt="6" />
+      <h3>HP Victus 15.6 i5 Laptop, 15.6"</h3>
+      <p>HP Victus 15.6 i5 Laptop, 15.6" FHD 1920*1080 144Hz, Intel Core i5-12450H, NVIDIA GeForce RTX 3050, 32GB RAM, 1TB SSD, Backlit KB, Touchpad, SD Card Reader, Webcam, HDMI, Wi-Fi 6, W11 H, Blue</p>
+      <p><strong>P2499</strong> <span style="color:green;">Student Discount Available</span></p>
+      <a href="deals.html?product-6" class="btn">View Details</a>
+    </div>
+    <div class="product-card">
+      <img src="images/10.webp" alt="10" />
+      <h3>Dell Inspiron 3520 15.6" FHD Laptop</h3>
+      <p>Dell Inspiron 3520 15.6" FHD Laptop, Intel Core i7-1255U Processor, 32GB RAM, 1TB SSD, Webcam, HDMI, SD-Card Slot, Wi-Fi 6, Windows 11 Home, Black</p>
+      <p><strong>P5500</strong> <span style="color:green;">Student Discount Available</span></p>
+      <a href="deals.html?product-10" class="btn">View Details</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <p>&copy; 2025 CampusCart. All rights reserved.</p>
+</footer>
+<script>
+  // Get the product ID from the URL
+  const params = new URLSearchParams(window.location.search);
+  const selectedProductId = params.get("product");
+
+  // Hide all product-info divs
+  document.querySelectorAll(".product-info").forEach(div => {
+    div.style.display = "none";
+  });
+
+  // Show only the selected product
+  if (selectedProductId) {
+    const selectedProduct = document.getElementById("product-" + selectedProductId);
+    if (selectedProduct) {
+      selectedProduct.style.display = "block";
+    } else {
+      document.body.innerHTML += "<p style='text-align:center;'>Product not found.</p>";
+    }
+  } else {
+    document.body.innerHTML += "<p style='text-align:center;'>No product selected.</p>";
+  }
+</script>
+
+</body>
+</html>
